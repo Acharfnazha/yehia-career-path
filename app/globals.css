@@ -13,6 +13,8 @@
   --color-cedar-soft: #e3efe9;
   --color-amber: #c97a2b;
   --color-amber-soft: #f8ead9;
+  /* Darker amber for text on amber-soft: 5.15:1 (the base amber is only 2.82:1). */
+  --color-amber-text: #8f541a;
 }
 
 body {

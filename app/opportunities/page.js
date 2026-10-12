@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MapPinIcon } from "@/components/icons";
 import { opportunities } from "@/data/opportunities";
 
 export const metadata = {
@@ -34,7 +35,10 @@ export default function OpportunitiesPage() {
               <p className="font-medium text-cedar-dark">
                 {opportunity.company}
               </p>
-              <p className="text-sm text-muted">📍 {opportunity.location}</p>
+              <p className="flex items-center gap-1.5 text-sm text-muted">
+                <MapPinIcon />
+                {opportunity.location}
+              </p>
             </div>
             <Link
               href={`/opportunities/${opportunity.id}`}

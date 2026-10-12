@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 const statusStyles = {
-  Applied: "bg-amber-soft text-amber",
+  Applied: "bg-amber-soft text-amber-text",
   "Under review": "bg-cedar-soft text-cedar-dark",
   "Interview scheduled": "bg-ink text-white",
 };

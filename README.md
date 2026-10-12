@@ -34,6 +34,9 @@ app/
     layout.js                Nested layout: Overview / Applications navigation
     page.js                  /dashboard
     applications/page.js     /dashboard/applications
+components/
+  nav-link.js                Link that highlights the current page (Client Component)
+  icons.js                   Inline SVG icons
 data/
   opportunities.js           Starter opportunity data
   applications.js            Sample applications (the dashboard total is calculated from this list)
@@ -69,7 +72,8 @@ The layout holds what both dashboard pages share and what should stay on screen 
 
 ## Notes
 
-- All pages are Server Components. Nothing in this assignment needs `useState` or `"use client"`.
+- All pages and layouts are Server Components. The only Client Component is `components/nav-link.js`: it uses `usePathname()` to highlight the page you are on and mark it with `aria-current="page"`, which can't be done on the server inside a shared layout. No page uses `useState`.
+- Accessibility pass: text colours meet WCAG AA contrast (the amber badge text was darkened from 2.8:1 to 5.2:1), icons are inline SVG instead of emoji, focus outlines are visible, and the loading skeleton stops pulsing when the system "reduce motion" setting is on.
 - The font is Plus Jakarta Sans, loaded with `next/font/google` in the root layout.
 - The project keeps the `create-next-app@16` defaults, including Cache Components. Because of that, the dynamic page uses `generateStaticParams` to prerender IDs 1–3 at build time, and `loading.js` gives it a fallback. Unknown IDs such as `999` are still rendered on request and show the "not found" message.
 - The companies, roles, and applications are fictional and only exist for this assignment.

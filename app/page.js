@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="space-y-12">
       <section className="space-y-6">
-        <p className="inline-block rounded-full bg-amber-soft px-3 py-1 text-sm font-semibold text-amber">
+        <p className="inline-block rounded-full bg-amber-soft px-3 py-1 text-sm font-semibold text-amber-text">
           Chapter 1 · The starting point
         </p>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">

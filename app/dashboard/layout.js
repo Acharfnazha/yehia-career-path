@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavLink from "@/components/nav-link";
 
 const dashboardLinks = [
   { href: "/dashboard", label: "Overview" },
@@ -18,12 +18,15 @@ export default function DashboardLayout({ children }) {
           <ul className="inline-flex flex-wrap gap-1 rounded-xl border border-line bg-card p-1 text-sm font-semibold">
             {dashboardLinks.map((link) => (
               <li key={link.href}>
-                <Link
+                <NavLink
                   href={link.href}
-                  className="block rounded-lg px-4 py-2 text-muted transition-colors hover:bg-cedar-soft hover:text-cedar-dark"
+                  exact
+                  className="block rounded-lg px-4 py-2 transition-colors"
+                  inactiveClassName="text-muted hover:bg-cedar-soft hover:text-cedar-dark"
+                  activeClassName="bg-cedar text-white"
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

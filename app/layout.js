@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import NavLink from "@/components/nav-link";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -36,12 +37,15 @@ export default function RootLayout({ children }) {
               <ul className="flex flex-wrap gap-1 text-sm font-medium">
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link
+                    <NavLink
                       href={link.href}
-                      className="block rounded-lg px-2.5 py-2 text-muted sm:px-3 transition-colors hover:bg-cedar-soft hover:text-cedar-dark"
+                      exact={link.href === "/"}
+                      className="block rounded-lg px-2.5 py-2 transition-colors sm:px-3"
+                      inactiveClassName="text-muted hover:bg-cedar-soft hover:text-cedar-dark"
+                      activeClassName="bg-cedar-soft font-semibold text-cedar-dark"
                     >
                       {link.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>

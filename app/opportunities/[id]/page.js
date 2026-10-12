@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CompassIcon, MapPinIcon } from "@/components/icons";
 import { opportunities } from "@/data/opportunities";
 
 // Prerender the three known opportunities at build time. Any other ID
@@ -14,9 +15,7 @@ export default async function OpportunityPage({ params }) {
   if (!opportunity) {
     return (
       <div className="mx-auto max-w-xl space-y-5 rounded-2xl border border-line bg-card p-8 text-center">
-        <p className="text-4xl" aria-hidden="true">
-          🧭
-        </p>
+        <CompassIcon className="mx-auto h-12 w-12 text-cedar" />
         <h1 className="text-2xl font-bold">Opportunity not found</h1>
         <p className="leading-7 text-muted">
           There is no opportunity with the ID &quot;{id}&quot;. It may have
@@ -52,8 +51,9 @@ export default async function OpportunityPage({ params }) {
           <span className="rounded-full bg-cedar-soft px-3 py-1 text-cedar-dark">
             {opportunity.company}
           </span>
-          <span className="rounded-full bg-amber-soft px-3 py-1 text-amber">
-            📍 {opportunity.location}
+          <span className="flex items-center gap-1.5 rounded-full bg-amber-soft px-3 py-1 text-amber-text">
+            <MapPinIcon />
+            {opportunity.location}
           </span>
         </div>
       </header>
